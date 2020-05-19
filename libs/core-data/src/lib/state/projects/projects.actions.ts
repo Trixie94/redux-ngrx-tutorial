@@ -3,6 +3,7 @@ import { Action } from "@ngrx/store";
 
 export enum ProjectsActionTypes {
   SelectedProject = '[Projects] Selected',
+  LoadProjects = '[Projects] Load Data',
   CreateProject = '[Projects] Add Data',
   UpdateProject = '[Projects] Update Data',
   DeleteProject = '[Projects] Delete Data'
@@ -11,6 +12,11 @@ export enum ProjectsActionTypes {
 export class SelectProject implements Action {
   readonly type = ProjectsActionTypes.SelectedProject;
   constructor(private payload: Project) { }
+}
+
+export class LoadProjects implements Action {
+  readonly type = ProjectsActionTypes.LoadProjects;
+  constructor(private payload: Project[]) {}
 }
 
 export class CreateProject implements Action {
@@ -30,6 +36,7 @@ export class DeleteProject implements Action {
 
 export type ProjectsAction =
   SelectProject
+  | LoadProjects
   | CreateProject
   | UpdateProject
   | DeleteProject
