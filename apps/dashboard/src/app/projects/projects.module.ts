@@ -16,7 +16,7 @@ import { CoreDataModule } from '@workshop/core-data';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    CoreDataModule
+    // CoreDataModule is invoked twice thus causing an error
   ],
   declarations: [
     ProjectsComponent,
